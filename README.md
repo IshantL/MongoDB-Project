@@ -20,5 +20,18 @@
  "db.--name of collection to look at".find().pretty()"
 
  6. To create collections- "db.createCollection("Cars")"
- 
- 7. 
+
+ 7. To add a new document in the collection car by 
+ db.car.insert({
+     name: "Honda",
+     model: "2019",
+     price: 1000000
+ }) 
+ 8. If we want to update something
+db.car.update({
+    name: 'honda'
+    },
+    { $set: {
+     name: 'ford'
+    }
+})
