@@ -1,7 +1,7 @@
-# MongoDB-Project
+# MongoDB-Basics Lessons
 
-## Installation Steps of Mongo DB
- 1. Download Mongo DB from MOngo official site.
+## Installation Steps for Mongo DB
+ 1. Download Mongo DB from Mongo official site.
  2. Navigate to Mongo Installation folder and in Bin type command mongod to start mongo 
  3. after the server start, we can use mongo command to open up mongo DB shell and use commands
  
