@@ -71,3 +71,27 @@ db.car.update({
 ```
 db.car.remove({name:"xyz}) 
 ```
+
+## Data Type
+
+We've already introduced the concepts of what a schema and a collection are.
+
+You can think of them as essentially being equal in so much as the schema forms a representation or a model encoding of the data that gets stored into our collection.
+
+Let's now take a look at the different types of data that can get stored.
+
+There are six main data types.
+1. String
+2. number
+3. date 
+4. array 
+5. boolean
+6. object ID.
+
+
+
+There is also two other data types 
+
+They are a buffer and mixed data buffer is used to store things like images video and audio mixed type allows you to sort different types based on what you pass into it.
+
+So you might want to store in certain instances strings and in other instances arrays.
