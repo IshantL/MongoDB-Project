@@ -156,7 +156,16 @@ So whichever student is enrolled in fewer units should appear at the top of the 
 
 So it was able to pull out those students again enrolled in history and then sort based on the number of units that they're taking in we can clean this up a little bit so you can see it better by using the doc pretty command.
 
-db.student.find({}).sort({name: -1})    // descending
 
+when we're using sort it will either sort numerically or alphabetically so in this case we're sorting numerically.
+
+If instead we wanted to sort alphabetically we would be sorting a string.
+We'd be sorting in a descending manner so those with a name closer to A will appear first and those with the names closer to Z will appear towards the bottom.
+
+```
+db.student.find({}).sort({name: -1})    // descending
+```
+And finally we always have the option to limit the number of results that we get back and we can easily pass in just a number so that after retrieving all those documents according to whatever specificity that we've indicated we can then say now only give me the first two that you get back. So again you can see how we've limited this to the first two results sorted by name.
+```
 db.student.find({}).sort({name: 1}).limit(2)
 ```
