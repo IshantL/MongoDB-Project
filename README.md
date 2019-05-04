@@ -69,7 +69,7 @@ db.car.update({
   and fro perticular -
   
 ```
-db.car.remove({name:"xyz}) 
+db.car.remove({name:"xyz"}) 
 ```
 
 ## Data Type
@@ -96,3 +96,67 @@ There is also two other data types
 They are a buffer and mixed data buffer is used to store things like images video and audio mixed type allows you to sort different types based on what you pass into it.
 
 So you might want to store in certain instances strings and in other instances arrays.
+
+## Query Data
+
+create collection by using db.createCollection("students");
+```
+db.student.insert({
+    name: 'Joe',
+    undergrad: true,
+    units: 9,
+    classes: ['geography', 'math', 'journalism']
+})
+
+db.student.insert({
+    name: 'Jane',
+    undergrad: false,
+    units: 12,
+    classes: ['geography', 'science', 'journalism', 'history']
+})
+
+db.student.insert({
+    name: 'Kevin',
+    undergrad: true,
+    units: 3,
+    classes: ['geography']
+})
+
+db.student.insert({
+    name: 'Rachel',
+    undergrad: false,
+    units: 6,
+    classes: ['geography', 'history']
+})
+
+db.student.find({})
+db.student.find({'name': 'Rachel'})
+db.student.find({units: {$gt: 6}})  //greater than 6
+db.student.find({units: {$lt: 7}})  // less than 7
+```
+So in this example we're looking within the classes field and we want to pull out all those students that are enrolled in history.
+```
+db.student.find({classes: {$in: ['history']}}) //
+```
+
+So using that and we always have to specify an array so we could say history and geography for example and this would be an array.
+```
+db.student.find({classes: {$in: ['history','geography']}}).pretty()
+```
+
+Now we'll take a look at how we can sort and limit the results of our queries.
+
+So when we're sorting we typically assign either a 1 or a negative one to whatever it is that we're trying to sort.
+
+So in this example we're looking for students enrolled in history and then we're sorting by ascending and we're filtering by the number of units.
+```
+db.student.find({classes: {$in: ['history']}}).sort({units: 1})    // ascending
+```
+So whichever student is enrolled in fewer units should appear at the top of the data that we get back. when we submit this query we get back first Rachel who's enrolled in six units and then Jane who was enrolled in 12 units.
+
+So it was able to pull out those students again enrolled in history and then sort based on the number of units that they're taking in we can clean this up a little bit so you can see it better by using the doc pretty command.
+
+db.student.find({}).sort({name: -1})    // descending
+
+db.student.find({}).sort({name: 1}).limit(2)
+```
