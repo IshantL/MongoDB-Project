@@ -12,7 +12,10 @@
 
  3. "show collections" - to see what collections are created in the database
 
- 4. The schema  is a representation of the collection and it will constitute key value pairs command that we can use to look into one of these collections is the find the method is "db.--name of collection to look at".find()".
+ 4. The schema  is a representation of the collection and it will constitute key value pairs command that we can use to look into one of these collections is the find the method is 
+ ```
+ db.--name of collection to look at".find()
+ ```.
  We can see that there is document in this collection. This document has an underscore ID key whose value is set to an object ID. This field gets automatically generated every time a new document is created.
  we use JSON to define it the objects in our database which then it gets converted into something called Pisan seen here And the only difference between these two in code is that piece on has quotation marks surrounding both the key and value pairs of our objects.
 
