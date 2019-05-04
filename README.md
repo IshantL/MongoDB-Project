@@ -88,6 +88,7 @@ There are six main data types.
 5. boolean
 6. object ID.
 
+![alt text](https://github.com/IshantL/MongoDB-Project/blob/master/images/datatype.png)
 
 
 There is also two other data types 
