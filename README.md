@@ -32,6 +32,20 @@ db.car.update({
     name: 'honda'
     },
     { $set: {
-     name: 'ford'
+     name: 'xyz'
     }
 })
+
+9. To update and add some property in document.
+
+db.car.update({
+    name: "xyz"
+},
+{
+    $set:{
+        transmittion:"automatic"
+    }
+},
+{$upsert: true})
+
+10. To remove all the document - db.car.remove({}) and fro perticular - db.car.remove({name:"xyz}) 
